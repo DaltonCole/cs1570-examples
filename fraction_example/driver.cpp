@@ -6,15 +6,18 @@
 using namespace std;
 
 int main() {
-	Fraction f, g;
+	Fraction f, g, h;
+	int tmp;
 
 	f.readin();
-	f.unreduce(2);
-	g = f.reciprocal();
 
-	f.print();
-	cout << endl;
-	g.print();
+	cin >> tmp;
+	g.setNum(tmp);
+	cin >> tmp;
+	g.setDen(tmp);
+
+	h = mult_frac(f, g);
+	h.print();
 	cout << endl;
 
 	return 0;

@@ -11,12 +11,12 @@ void Fraction::readin() {
 	return;
 }
 
-void Fraction::print() {
+void Fraction::print() const {
 	cout << m_num << " / " << m_den;
 	return;
 }
 
-Fraction Fraction::reciprocal() {
+Fraction Fraction::reciprocal() const {
 	Fraction tmp;
 	tmp.m_num = m_den;
 	tmp.m_den = m_num;
@@ -30,3 +30,42 @@ void Fraction::unreduce(const int m) {
 
 	return;
 }
+
+void Fraction::setNum(const int n) {
+	m_num = n;
+	return;
+}
+
+bool Fraction::setDen(const int d) {
+	bool good = false;
+	if(d != 0) {
+		m_den = d;
+		good = true;
+	}
+	return true;
+}
+
+Fraction mult_frac(const Fraction& lhs, const Fraction& rhs) {
+	// Declare
+	Fraction tmp;
+	
+	// Build
+	tmp.m_num = lhs.m_num * rhs.m_num;
+	tmp.m_den = lhs.m_den * rhs.m_den;
+
+	// Return
+	return tmp;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
