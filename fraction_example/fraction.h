@@ -9,7 +9,12 @@ using namespace std;
 
 class Fraction {
 	public:
-		void readin();
+		Fraction(const int n=0, const int d=1);
+        // But you said the copy constructor is given to you! Why are you
+        //   making one?? Because I felt like it okay!
+        Fraction(const Fraction & rhs): m_num(rhs.m_num), m_den(rhs.m_den) {}
+
+        void readin();
 		void print() const;
 		Fraction reciprocal() const;
 		void unreduce(const int m);

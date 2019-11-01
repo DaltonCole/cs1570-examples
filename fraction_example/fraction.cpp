@@ -2,6 +2,11 @@
 
 #include "fraction.h"
 
+Fraction::Fraction(const int n, const int d) {
+    m_num = n;
+    setDen(d);
+}
+
 void Fraction::readin() {
 	cout << "Enter the numerator: ";
 	cin >> m_num;
@@ -12,7 +17,7 @@ void Fraction::readin() {
 }
 
 void Fraction::print() const {
-	cout << m_num << " / " << m_den;
+	cout << m_num << " / " << m_den << endl;
 	return;
 }
 

@@ -6,19 +6,12 @@
 using namespace std;
 
 int main() {
-	Fraction f, g, h;
-	int tmp;
+	Fraction f, g(10), h(17, 32), z(h);
 
-	f.readin();
-
-	cin >> tmp;
-	g.setNum(tmp);
-	cin >> tmp;
-	g.setDen(tmp);
-
-	h = mult_frac(f, g);
-	h.print();
-	cout << endl;
+    f.print();
+    g.print();
+    h.print();
+    z.print();
 
 	return 0;
 }
