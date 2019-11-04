@@ -7,6 +7,22 @@ Fraction::Fraction(const int n, const int d) {
     setDen(d);
 }
 
+Fraction operator*(const Fraction& lhs, const Fraction& rhs) {
+    Fraction result(lhs);
+    return result *= rhs;
+}
+
+Fraction& Fraction::operator*=(const Fraction& rhs) {
+    m_num *= rhs.m_num;
+    m_den *= rhs.m_den;
+    return *this;
+}
+
+ostream& operator<<(ostream& o, const Fraction& f) {
+    o << "(" << f.m_num << ", " << f.m_den << ")";
+    return o;
+}
+
 void Fraction::readin() {
 	cout << "Enter the numerator: ";
 	cin >> m_num;

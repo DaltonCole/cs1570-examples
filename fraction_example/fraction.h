@@ -5,6 +5,7 @@
 #define FRACTION_H
 
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class Fraction {
@@ -14,6 +15,12 @@ class Fraction {
         //   making one?? Because I felt like it okay!
         Fraction(const Fraction & rhs): m_num(rhs.m_num), m_den(rhs.m_den) {}
 
+        // Operators
+        friend Fraction operator*(const Fraction& lhs, const Fraction& rhs);
+        Fraction& operator*=(const Fraction& rhs);
+        friend ostream& operator<<(ostream& o, const Fraction& f);
+
+        // General Functions
         void readin();
 		void print() const;
 		Fraction reciprocal() const;

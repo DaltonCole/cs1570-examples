@@ -6,12 +6,13 @@
 using namespace std;
 
 int main() {
-	Fraction f, g(10), h(17, 32), z(h);
+	Fraction f(1, 2), g(2, 3);
 
-    f.print();
-    g.print();
-    h.print();
-    z.print();
+    cout << (f * g) << endl;
+
+    f *= g;
+
+    cout << f << endl;
 
 	return 0;
 }
