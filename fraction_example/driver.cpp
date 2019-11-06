@@ -18,5 +18,16 @@ int main() {
 
     cout << ~f << endl;
 
+    f[0] = 12;
+    f[1] = 13;
+
+    cout << f[0] << endl;
+    cout << f[1] << endl;
+    cout << f << endl;
+
+    f(9, 12);
+    cout << f << endl;
+
+
 	return 0;
 }

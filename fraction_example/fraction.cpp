@@ -31,6 +31,16 @@ bool operator!=(const Fraction& lhs, const Fraction& rhs) {
     return !(lhs == rhs);
 }
 
+int& Fraction::operator[](const int index) {
+    return (index == 0) ? m_num : m_den;    
+}
+
+void Fraction::operator()(const int n, const int d) {
+    m_num = n;
+    m_den = d;
+    return;
+}
+
 void Fraction::readin() {
 	cout << "Enter the numerator: ";
 	cin >> m_num;

@@ -27,6 +27,11 @@ class Fraction {
         friend bool operator!=(const Fraction& lhs, const Fraction& rhs);
         // ~
         Fraction operator~() const {return Fraction(m_den, m_num);}
+        // []
+        int& operator[](const int index);
+        // ()
+        void operator()(const int n, const int d);
+
 
         // General Functions
         void readin();
