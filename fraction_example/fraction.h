@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <fstream>
+#include "cat.h"
 using namespace std;
 
 class Fraction {
@@ -15,10 +16,17 @@ class Fraction {
         //   making one?? Because I felt like it okay!
         Fraction(const Fraction & rhs): m_num(rhs.m_num), m_den(rhs.m_den) {}
 
-        // Operators
+        //--- Operators ---//
+        // *, *=
         friend Fraction operator*(const Fraction& lhs, const Fraction& rhs);
         Fraction& operator*=(const Fraction& rhs);
+        // <<
         friend ostream& operator<<(ostream& o, const Fraction& f);
+        // ==, !=
+        friend bool operator==(const Fraction& lhs, const Fraction& rhs);
+        friend bool operator!=(const Fraction& lhs, const Fraction& rhs);
+        // ~
+        Fraction operator~() const {return Fraction(m_den, m_num);}
 
         // General Functions
         void readin();
@@ -33,7 +41,11 @@ class Fraction {
 		bool setDen(const int d);
 		// Friends
 		friend Fraction mult_frac(const Fraction& lhs, const Fraction& rhs);
-	private:
+	
+        // Weird stuff
+        Fraction& operator=(const Cat& kitty);
+    
+    private:
 		int m_num;
 		int m_den;
 };

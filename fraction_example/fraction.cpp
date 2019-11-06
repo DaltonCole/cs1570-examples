@@ -19,8 +19,16 @@ Fraction& Fraction::operator*=(const Fraction& rhs) {
 }
 
 ostream& operator<<(ostream& o, const Fraction& f) {
-    o << "(" << f.m_num << ", " << f.m_den << ")";
+    o << "(" << f.m_num << "/ " << f.m_den << ")";
     return o;
+}
+
+bool operator==(const Fraction& lhs, const Fraction& rhs) {
+    return (lhs.m_num * rhs.m_den) == (lhs.m_den * rhs.m_num);
+}
+
+bool operator!=(const Fraction& lhs, const Fraction& rhs) {
+    return !(lhs == rhs);
 }
 
 void Fraction::readin() {
@@ -78,7 +86,11 @@ Fraction mult_frac(const Fraction& lhs, const Fraction& rhs) {
 	return tmp;
 }
 
-
+Fraction& Fraction::operator=(const Cat& kitty) {
+    m_num = kitty.m_num_lives;
+    m_den = kitty.m_legs;
+    return *this;
+}
 
 
 
