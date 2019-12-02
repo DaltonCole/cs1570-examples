@@ -15,15 +15,6 @@ Matrix<T>::Matrix(const int r, const int c, const T default_value) {
     }
 }
 
-template <typename T>
-Matrix<T>::~Matrix() {
-    for(int i = 0; i < rows; i++) {
-        delete[] matrix[i];
-    }
-
-    delete[] matrix;
-}
-
 // Get
 template <typename T>
 T Matrix<T>::operator()(const int r, const int c) const {

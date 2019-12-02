@@ -13,8 +13,6 @@ class Matrix {
         // Constructors
         Matrix(): rows(0), columns(0) {}
         Matrix(const int r, const int c, const T default_value);
-        // Destructor
-        ~Matrix();
 
         // Get Value
         T operator()(const int r, const int c) const;
